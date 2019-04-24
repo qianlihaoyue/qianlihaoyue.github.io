@@ -1,13 +1,13 @@
 
 /* 鼠标特效 */
-
+<script>
 var a_idx = 0;
 
 jQuery(document).ready(function($) {
     $("body").click(
 	function(e) 
 	{
-        var a = new Array("c","c++","python","Java","PHP","Go","R","Js"");
+        var a = new Array("c","c++","python","Java","PHP","Go","R","Js");
         var $i = $("<span></span>").text(a[a_idx]);
         a_idx = (a_idx + 1) % a.length;
         var x = e.pageX,
@@ -32,4 +32,4 @@ jQuery(document).ready(function($) {
         });
     });
 });
-
+</script>
