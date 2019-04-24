@@ -3,11 +3,8 @@ if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
 } else {}
 </script>  */
 
-color="100,100,100" 
-opacity="3" 
-count="60" 
-zindex="-2"
 
+!
 function() {
     function o(w, v, i) {
         return w.getAttribute(v) || i
