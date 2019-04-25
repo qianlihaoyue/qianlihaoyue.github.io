@@ -1,0 +1,30 @@
+
+body,.overlay {
+	-webkit-perspective: 1000;
+	-webkit-perspective-origin-y: 25%
+}
+
+body,.overlay {
+	background: -webkit-linear-gradient(top,#cbebdb 0,#3794c0 100%);
+	#background: #3794c0
+}
+
+.ui-input {
+	width: 100%;
+	height: 50px;
+	background: 0;
+	font-size: 24px;
+	font-weight: 700;
+	color: #fff;
+	text-align: center;
+	border: 0;
+	border-bottom: 2px solid #fff
+}
+
+.ui-input:focus {
+	outline: 0;
+	border: 0;
+	border-bottom: 2px solid #fff
+}
+
+
