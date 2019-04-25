@@ -5,8 +5,8 @@ body,.overlay {
 }
 
 body,.overlay {
-	#background: -webkit-linear-gradient(top,#cbebdb 0,#3794c0 100%);
-	background: #3794c0
+	background: -webkit-linear-gradient(top,#cbebdb 0,#3794c0 100%);
+	#background: #3794c0
 }
 
 
