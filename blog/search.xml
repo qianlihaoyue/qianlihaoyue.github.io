@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[python制作词云]]></title>
+    <url>%2Fblog%2F2019%2F04%2F27%2Fpython%E5%88%B6%E4%BD%9C%E8%AF%8D%E4%BA%91%2F</url>
+    <content type="text"><![CDATA[等我什么时间有空了再完善 用python制作词云基本操作的网上都有,就写一些自己独特的见解吧 官网 1.用某张图片做基准生成词云 可以先用Ps二值化处理，简单说就是将基准部分涂成黑色，其它部分涂成白色，这样生成的词云效果才好 2.放大图片 如果图片太小，生成的词云不仅内容少，而且不清晰，这个也是用Ps，先新建一个超级大的图片，然后把图片复制过去，ctrl+T拉伸一下就行了，因为是二值图，所以没什么影响]]></content>
+      <tags>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[powershell配置]]></title>
     <url>%2Fblog%2F2019%2F04%2F27%2Fpowershell%E9%85%8D%E7%BD%AE%2F</url>
-    <content type="text"><![CDATA[这是我的第一篇博客，突然发现好费时间，所以文章细节自行百度，谷歌也行 1.为什么要用powershell一句话就是，powershell是cmd的超集。 详情自行百度 缺点：对于电脑配置不太好的电脑，打开可能会慢一点，特别是多开几个插件 2.打开方式1.win+R (windows旧版本可以在‘开始’中找到运行),或者任务管理器-&gt;文件-&gt;运行新任务 输入 powershell 2.在文件目录 shift+右键 可以在此目录启动powershell 3.如果觉得按shift太麻烦，可以修改注册表 [HKEY_CLASSES_ROOT\Directory\Background\shell] 此处是鼠标右键面板，为了防止意外，可以先对shell备份，（对着shell右键导出），然后新建一个项，和原来的Powershell不同就行，然后再新建的项中新建项 command，然后修改command数值数据 powershell.exe -noexit -command Set-Location -literalPath ‘%V’ 其实就是将原来的powershell值复制了一下可以再添加icon，这里就不写了 3.常用技巧1.运行/调用应用start “路径” 可以打开文件，打开文件夹，运行exe bat，打开网址等。。。（如果路径中有空格必须加引号） 直接输入某些应用就可打开，（前提是已经安装并且在系统变量path中），比如 ==python== ==vim== ==gcc== 还有一些windows自带的 比如 taskmgr 任务管理器 control 控制面板，==slidetoshutdown== 滑动关机（win10专属好像，至少xp没），==regedit== 注册表等。。。自行百度 2.dos常用命令介绍几个优于图形化界面的命令 1.del *.txt *是通配符，可以删除该目录下所有txt文件 2.cd “path” 转到某目录这里cmd和powershell有些不同，cmd切换盘符，只键入==d:==就行了,不用==cd d:==，powershell随意 3.dir 后面可加路径，不加默认就是当前目录 ，显示目录的文件及文件夹，不过没gvim的tree炫 4.netsh wlan show profile 可以查看电脑连过的wifinetsh wlan show profile name=”wifi名称” key=clear 可以查看wifi password肯定会有丧心病狂的人把它封装成exe或者bat，一键导出所有wifi密码，放在U盘里,比如我，就是还没找到U盘自启动的办法。。。 5.懒得写了。。。 ##3.介绍一些cmd的小技巧吧 1.定时关机，睡眠2.隐藏文件3.copy文件 放在U盘，或者硬盘里，一键备份4.删除文件放在U盘里，删除插入手机产生的临时文件夹或者做项目时删除软件产生的临时文件或者删除下载文件中的 广告网页链接快捷方式自由发挥。。。5.产生死循环执行某些命令。。。 4.美化及折腾##1.插件可以搜搜powershell有哪些插件，我就用了两个，一个是PowerTab补全，自带的Tab补全没有可视化窗格 第二个是oh-my-posh主题美化 ##2.字体 为什么 Windows 下 cmd 和 PowerShell 不能方便地自定义字体？-知乎 ##3.当然有最简单的美化 直接在powershell标题上右键-&gt;属性，改改字体，大小，颜色还是可以的]]></content>
+    <content type="text"><![CDATA[这是我的第一篇博客，突然发现好费时间，所以文章细节自行百度，谷歌也行 [TOC] 1.为什么要用powershell一句话就是，powershell是cmd的超集。 详情自行百度 缺点：对于电脑配置不太好的电脑，打开可能会慢一点，特别是多开几个插件 2.打开方式1.win+R (windows旧版本可以在‘开始’中找到运行),或者任务管理器-&gt;文件-&gt;运行新任务 输入 powershell 2.在文件目录 shift+右键 可以在此目录启动powershell 3.如果觉得按shift太麻烦，可以修改注册表 [HKEY_CLASSES_ROOT\Directory\Background\shell] 此处是鼠标右键面板，为了防止意外，可以先对shell备份，（对着shell右键导出），然后新建一个项，和原来的Powershell不同就行，然后再新建的项中新建项 command，然后修改command数值数据 powershell.exe -noexit -command Set-Location -literalPath &#39;%V&#39; 其实就是将原来的powershell值复制了一下可以再添加icon，这里就不写了 3.常用技巧 1.运行/调用应用 1.start “路径” 可以打开文件，打开文件夹，运行exe bat，打开网址等。。。（如果路径中有空格必须加引号） 2.直接输入某些应用就可打开，（前提是已经安装并且在系统变量path中），比如 python vim gcc 3.还有一些windows自带的 比如 taskmgr 任务管理器 control 控制面板，slidetoshutdown 滑动关机（win10专属好像，至少xp没），regedit 注册表等。。。自行百度 2.dos常用命令 介绍几个优于图形化界面的命令 1.del *.txt *是通配符，可以删除该目录下所有txt文件 2.cd “path” 转到某目录这里cmd和powershell有些不同，cmd切换盘符，只键入d: 就行了,不用 cd d:，powershell随意 3.dir 后面可加路径，不加默认就是当前目录 ，显示目录的文件及文件夹，不过没gvim的tree炫 4.netsh wlan show profile 可以查看电脑连过的wifinetsh wlan show profile name=&quot;wifi名称&quot; key=clear 可以查看wifi password肯定会有丧心病狂的人把它封装成exe或者bat，一键导出所有wifi密码，放在U盘里,比如我，就是还没找到U盘自启动的办法。。。 5.懒得写了。。。 3.介绍一些cmd的小技巧吧 1.定时关机，睡眠2.隐藏文件3.copy文件 放在U盘，或者硬盘里，一键备份4.删除文件放在U盘里，删除插入手机产生的临时文件夹或者做项目时删除软件产生的临时文件或者删除下载文件中的 广告网页链接快捷方式自由发挥。。。5.产生死循环执行某些命令。。。 4.美化及折腾1.插件 可以搜搜powershell有哪些插件，我就用了两个，一个是PowerTab补全，自带的Tab补全一次只能显示一个 第二个是oh-my-posh主题美化 2.字体 为什么 Windows 下 cmd 和 PowerShell 不能方便地自定义字体？-知乎 3.当然有最简单的美化 直接在powershell标题上右键-&gt;属性，改改字体，大小，颜色还是可以的]]></content>
       <tags>
         <tag>windows</tag>
       </tags>
@@ -11,7 +19,7 @@
   <entry>
     <title><![CDATA[Hexo修改live2d]]></title>
     <url>%2Fblog%2F2019%2F04%2F27%2FHexo%E4%BF%AE%E6%94%B9live2d%2F</url>
-    <content type="text"><![CDATA[#1. live2d下载1.live2d下载及配置2.live2d模型3.配置完后记得在手机端查看一下 #2.折腾一下 1.模型文件夹下moc储存着模型图片，可以压缩一下,也可以Ps美化一下 2.mtn中储存着动作文件，主要修改 00_idle.mtn 用记事本notepad++等都能打开，就是简单的几个英语单词和动作数据，比如眨眼就是1-&gt;0-&gt;1 修改这个主要是因为我博客那只猫，打起哈欠太恐怖了]]></content>
+    <content type="text"><![CDATA[1.live2d下载 1.live2d下载及配置2.live2d模型3.配置完后记得在手机端查看一下 2.折腾一下 1.模型文件夹下moc储存着模型图片，可以压缩一下,也可以Ps美化一下 2.mtn中储存着动作文件，主要修改 00_idle.mtn 用记事本notepad++等都能打开，就是简单的几个英语单词和动作数据，比如眨眼就是1-&gt;0-&gt;1 修改这个主要是因为我博客那只猫，打起哈欠太恐怖了]]></content>
       <tags>
         <tag>Hexo</tag>
       </tags>
@@ -19,7 +27,7 @@
   <entry>
     <title><![CDATA[Hexo自定义主页]]></title>
     <url>%2Fblog%2F2019%2F04%2F26%2FHexo%E8%87%AA%E5%AE%9A%E4%B9%89%E4%B8%BB%E9%A1%B5%2F</url>
-    <content type="text"><![CDATA[My blog #1.更改博客生成目录转载jsdoi的文章，这里只简单介绍第一步的操作步骤，没有详情 1.hexo clean + 手动清除 2.修改站点配置_config.yml url: http://qianlihaoyue.github.io/blogroot: /blog/public_dir: public/blog将博客文件生成到public的子目录blog下 3.在 node_modules/hexo-deployer-git/lib/deployer.js // var publicDir = this.public_dir;var publicDir = pathFn.join(baseDir, ‘public’);4.修复翻页问题在 node_modules/hexo/lib/plugins/helper/url_for.js 这里好像不太对// path = path || ‘/‘;path = path || ‘’; 5.现在自定义文件都在public文件夹里，自动生成的博客文件都在public/blog里 #2.这里是我的一些改动 1.如果之前已经添加过头像或者自定义js，你会发现都不能用了，修改一下路径就行了，在路径前面加上 /blog检查方法也很简单，在浏览器上右键检查，或者按F12，刷新一下，在Network/网络界面上 2.自定义你的界面，直接放在public里就行了，命名为index.html，使用的资源可以放在 主题/source中 3.&lt;meta http-equiv=”refresh” content=”12”;url=blog/index.html”&gt;这行代码可以定时跳转到文章主页 content=”时间”当然也可以添加一个按钮跳转 4.据说这行代码可以实现预加载，就是在别人欣赏你的自定义主页时，加载文章，优化速度，我又不是搞前端什么的，不求甚解就行了]]></content>
+    <content type="text"><![CDATA[My blog 1.更改博客生成目录转载jsdoi的文章，这里只简单介绍第一步的操作步骤，没有详情 1.hexo clean + 手动清除 2.修改站点配置_config.yml root: /blogpublic_dir: public/blog 将博客文件生成到public的子目录blog下 3.在 node_modules/hexo-deployer-git/lib/deployer.js // var publicDir = this.public_dir;var publicDir = pathFn.join(baseDir, &#39;public&#39;);4.修复翻页问题在node_modules/hexo/lib/plugins/helper/url_for.js 这里好像不太对// path = path || &#39;/&#39;;path = path || &#39;&#39;; 5.现在自定义文件都在public文件夹里，自动生成的博客文件都在public/blog里 2.这里是我的一些改动 1.如果之前已经添加过头像或者自定义js，你会发现都不能用了，修改一下路径就行了，在路径前面加上 /blog检查方法也很简单，在浏览器上右键检查，或者按F12，刷新一下，在Network/网络界面上 2.自定义你的界面，直接放在public里就行了，命名为index.html，使用的资源可以放在 主题/source中 3.&lt;meta http-equiv=&quot;refresh&quot; content=&quot;12&quot;;url=blog/index.html&quot;&gt;这行代码可以定时跳转到文章主页 content=”时间”当然也可以添加一个按钮跳转 4.&lt;link rel=&quot;prefetch&quot; href=&quot;blog/index.html&quot;&gt; 据说这行代码可以实现预加载，就是在别人欣赏你的自定义主页时，加载文章，优化速度，我又不是搞前端什么的，不求甚解就行了]]></content>
       <tags>
         <tag>Hexo</tag>
       </tags>
