@@ -106,7 +106,7 @@
 <meta property="og:site_name" content="Haoyue">
 <meta property="og:description" content="My blog #1.更改博客生成目录转载jsdoi的文章，这里只简单介绍第一步的操作步骤，没有详情 1.hexo clean + 手动清除 2.修改站点配置_config.yml url: http://qianlihaoyue.github.io/blogroot: /blog/public_dir: public/blog将博客文件生成到public的子目录blog下 3.在 node_mo">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-27T09:44:56.416Z">
+<meta property="og:updated_time" content="2019-04-27T10:07:57.071Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo自定义主页">
 <meta name="twitter:description" content="My blog #1.更改博客生成目录转载jsdoi的文章，这里只简单介绍第一步的操作步骤，没有详情 1.hexo clean + 手动清除 2.修改站点配置_config.yml url: http://qianlihaoyue.github.io/blogroot: /blog/public_dir: public/blog将博客文件生成到public的子目录blog下 3.在 node_mo">
@@ -410,8 +410,7 @@
 <p>2.修改站点配置_config.yml</p>
 <p>url: <a href="http://qianlihaoyue.github.io/blog">http://qianlihaoyue.github.io/blog</a><br>root: /blog/<br>public_dir: public/blog<br>将博客文件生成到public的子目录blog下</p>
 <p>3.在 node_modules/hexo-deployer-git/lib/deployer.js </p>
-<p>// var publicDir = this.public_dir;<br>var publicDir = pathFn.join(baseDir, ‘public’);</p>
-<p>4.修复翻页问题<br>在 node_modules/hexo/lib/plugins/helper/url_for.js </p>
+<p>// var publicDir = this.public_dir;<br>var publicDir = pathFn.join(baseDir, ‘public’);<br><a id="more"></a><br>4.修复翻页问题<br>在 node_modules/hexo/lib/plugins/helper/url_for.js </p>
 <p>这里好像不太对<br>// path = path || ‘/‘;<br>path = path || ‘’;</p>
 <p>5.现在自定义文件都在public文件夹里，自动生成的博客文件都在public/blog里</p>
 <p>#2.这里是我的一些改动</p>

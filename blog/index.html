@@ -402,7 +402,8 @@
 <h1 id="1-为什么要用powershell"><a href="#1-为什么要用powershell" class="headerlink" title="1.为什么要用powershell"></a>1.为什么要用powershell</h1><p>一句话就是，powershell是cmd的超集。</p>
 <p>详情自行百度</p>
 <p>缺点：对于电脑配置不太好的电脑，打开可能会慢一点，特别是多开几个插件</p>
-<h1 id="2-打开方式"><a href="#2-打开方式" class="headerlink" title="2.打开方式"></a>2.打开方式</h1>
+<h1 id="2-打开方式"><a href="#2-打开方式" class="headerlink" title="2.打开方式"></a>2.打开方式</h1><p>1.win+R  (windows旧版本可以在‘开始’中找到运行),或者任务管理器-&gt;文件-&gt;运行新任务</p>
+<p>输入 powershell<br>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/blog/2019/04/27/powershell配置/#more" rel="contents">
@@ -412,7 +413,7 @@
           <!--/noindex-->
         
       
-    </div>
+    </p></div>
     
     
     
@@ -529,11 +530,11 @@
       
         
           
-            <p>#1. live2d?????<br>1.<a href="https://github.com/EYHN/hexo-helper-live2d" target="_blank" rel="noopener">live2d??</a><br>2.<a href="https://github.com/xiazeyu/live2d-widget-models" target="_blank" rel="noopener">live2d?????</a><br>3.?????????????????????</p>
-<p>#2.????</p>
-<p>1.???????moc???????????<a href="https://tinypng.com/" target="_blank" rel="noopener">????</a>,????Ps????</p>
-<p>2.mtn????????????????? 00_idle.mtn ?????notepad++??????????????????????????? 1-&gt;0-&gt;1,????????</p>
-<p>????????????????????????</p>
+            <p>#1. live2d下载<br>1.<a href="https://github.com/EYHN/hexo-helper-live2d" target="_blank" rel="noopener">live2d下载及配置</a><br>2.<a href="https://github.com/xiazeyu/live2d-widget-models" target="_blank" rel="noopener">live2d模型</a><br>3.配置完后记得在手机端查看一下</p>
+<p>#2.折腾一下</p>
+<p>1.模型文件夹下moc储存着模型图片，可以<a href="https://tinypng.com/" target="_blank" rel="noopener">压缩一下</a>,也可以Ps美化一下</p>
+<p>2.mtn中储存着动作文件，主要修改 00_idle.mtn 用记事本notepad++等都能打开，就是简单的几个英语单词和动作数据，比如眨眼就是1-&gt;0-&gt;1</p>
+<p>修改这个主要是因为我博客那只猫，打起哈欠太恐怖了</p>
 
           
         
@@ -654,27 +655,23 @@
 
       
         
-          
-            <p><a href="https://qianlihaoyue.github.io">My blog</a></p>
+          <p><a href="https://qianlihaoyue.github.io">My blog</a></p>
 <p>#1.更改博客生成目录<br><a href="https://jsdoi.com/blog/2016/02/24/blog-hexo-github/" target="_blank" rel="noopener">转载jsdoi的文章</a>，这里只简单介绍第一步的操作步骤，没有详情</p>
 <p>1.hexo clean + 手动清除</p>
 <p>2.修改站点配置_config.yml</p>
 <p>url: <a href="http://qianlihaoyue.github.io/blog">http://qianlihaoyue.github.io/blog</a><br>root: /blog/<br>public_dir: public/blog<br>将博客文件生成到public的子目录blog下</p>
 <p>3.在 node_modules/hexo-deployer-git/lib/deployer.js </p>
-<p>// var publicDir = this.public_dir;<br>var publicDir = pathFn.join(baseDir, ‘public’);</p>
-<p>4.修复翻页问题<br>在 node_modules/hexo/lib/plugins/helper/url_for.js </p>
-<p>这里好像不太对<br>// path = path || ‘/‘;<br>path = path || ‘’;</p>
-<p>5.现在自定义文件都在public文件夹里，自动生成的博客文件都在public/blog里</p>
-<p>#2.这里是我的一些改动</p>
-<p>1.如果之前已经添加过头像或者自定义js，你会发现都不能用了，修改一下路径就行了，在路径前面加上 /blog<br>检查方法也很简单，在浏览器上右键检查，或者按F12，刷新一下，在Network/网络界面上</p>
-<p>2.自定义你的界面，直接放在public里就行了，命名为index.html，使用的资源可以放在 主题/source中</p>
-<p>3.\&lt;meta http-equiv=”refresh” content=”12”;url=blog/index.html”&gt;<br>这行代码可以定时跳转到文章主页   content=”时间”<br>当然也可以添加一个按钮跳转</p>
-<p>4.\<link rel="prefetch" href="blog/index.html"><br>据说这行代码可以实现预加载，就是在别人欣赏你的自定义主页时，加载文章，优化速度，我又不是搞前端什么的，不求甚解就行了</p>
-
-          
+<p>// var publicDir = this.public_dir;<br>var publicDir = pathFn.join(baseDir, ‘public’);<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/blog/2019/04/26/Hexo自定义主页/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
-    </div>
+    </p></div>
     
     
     
