@@ -1848,7 +1848,7 @@ pre {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #3c6f7c;
+  background: #ff3ce8;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2635,12 +2635,6 @@ embed {
 }
 .custom-logo .site-title a {
   border: none;
-}
-.custom-logo-image {
-  margin: 0 auto;
-  padding: 5px;
-  max-width: 150px;
-  background: #fff;
 }
 .custom-logo-image {
   margin: 0 auto;
