@@ -106,7 +106,7 @@
 <meta property="og:site_name" content="Haoyue">
 <meta property="og:description" content="等我什么时间有空了再完善  用python制作词云基本操作的网上都有,就写一些自己独特的见解吧 官网   1.用某张图片做基准生成词云 可以先用Ps二值化处理，简单说就是将基准部分涂成黑色，其它部分涂成白色，这样生成的词云效果才好 2.放大图片 如果图片太小，生成的词云不仅内容少，而且不清晰，这个也是用Ps，先新建一个超级大的图片，然后把图片复制过去，ctrl+T拉伸一下就行了，因为是二值图，所以">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-27T15:09:35.033Z">
+<meta property="og:updated_time" content="2019-04-27T15:13:33.059Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python制作词云">
 <meta name="twitter:description" content="等我什么时间有空了再完善  用python制作词云基本操作的网上都有,就写一些自己独特的见解吧 官网   1.用某张图片做基准生成词云 可以先用Ps二值化处理，简单说就是将基准部分涂成黑色，其它部分涂成白色，这样生成的词云效果才好 2.放大图片 如果图片太小，生成的词云不仅内容少，而且不清晰，这个也是用Ps，先新建一个超级大的图片，然后把图片复制过去，ctrl+T拉伸一下就行了，因为是二值图，所以">
@@ -156,7 +156,7 @@
 
 
 
-
+<script src="http://echarts.baidu.com/dist/echarts.common.min.js"></script>
 
 </head>
 
@@ -311,8 +311,13 @@
 
     <main id="main" class="main">
 	
+			<!-- particles.js container -->
+		<div id="particles-js"></div>
+	
       <div class="main-inner">
+
         <div class="content-wrap">
+			
           <div id="content" class="content">
             
 
@@ -452,6 +457,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/blog/2019/04/28/Haoyue的博客总则/" rel="prev" title="Haoyue的博客总则">
+                Haoyue的博客总则 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -511,6 +520,8 @@
           </li>
         </ul>
       
+	  
+
 
       <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
@@ -529,24 +540,44 @@
               
                 <a href="/blog/archives/">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
             
+			
+		
+
 
             
+			
+
 
             
               
               
               <div class="site-state-item site-state-tags">
-                
-                  <span class="site-state-item-count">3</span>
+                <a href="/blog/tags/index.html">
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">tags</span>
-                
+                </a>
               </div>
             
+			
+			
+		
+<script type="text/javascript" charset="utf-8" src="/blog/js/tagcloud.js"></script>
+<script type="text/javascript" charset="utf-8" src="/blog/js/tagcanvas.js"></script>
+<div class="widget-wrap">
+	<h3 class="widget-title">Tag Cloud</h3>
+	<div id="myCanvasContainer" class="widget tagcloud">
+		<canvas width="250" height="250" id="resCanvas" style="width=100%">
+			<ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hexo/">Hexo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/blog/">blog</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/python/">python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/windows/">windows</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/随想/">随想</a><span class="tag-list-count">1</span></li></ul>
+		</canvas>
+	</div>
+</div>
+
+
 
           </nav>
 
@@ -591,9 +622,12 @@
 
         
       </div>
+
 	  
 
     </main>
+	
+	
 	
 
 	
@@ -1158,29 +1192,78 @@
 
   <script type="text/javascript" src="/blog/lib/clipboard/clipboard.js"></script>
 <script type="text/javascript" src="/blog/js/src/custom.js"></script>
-  
-  
-  <script type="text/javascript" src="/blog/js/me/activate-power-mode.js"></script>
 
+<!--click-->
+<script type="text/javascript">
+var a_idx = 0;
+jQuery(document).ready(function($) {
+    $("body").click(
+	function(e) 
+	{
+        var a = new Array("c","c++","python","Java","PHP","Go","R","Js");
+        var $i = $("<span></span>").text(a[a_idx]);
+        a_idx = (a_idx + 1) % a.length;
+        var x = e.pageX,
+        y = e.pageY;
+        $i.css({
+            "z-index": 999999999999999999999999999999999999999999999999999999999999999999999,
+            "top": y - 20,
+            "left": x,
+            "position": "absolute",
+            "font-weight": "bold",
+            "color": "rgb("+~~(255*Math.random())+","+~~(255*Math.random())+","+~~(255*Math.random())+")"
+        });
+        $("body").append($i);
+        $i.animate({
+            "top": y - 180,
+            "opacity": 0
+        },
+        1500,
+        function() 
+		{
+            $i.remove();
+        });
+    });
+});
+</script>
+
+<!--input--> 
+<script type="text/javascript" src="/blog/js/me/activate-power-mode.js"></script>
 <script>  
 POWERMODE.colorful = true;  // 冒光特效  
 POWERMODE.shake = false;    // 抖动特效  
 document.body.addEventListener('input', POWERMODE); // 为所有 input 标签都加上特效  
 </script>  
 
-  
+<!--crash-->
+<script type="text/javascript" src="/blog/js/me/crash_cheat.js"></script>  
+
+
 <!script src="/js/me/link.js" color="80,80,80" opacity="3" count="35" zindex="-2">
-<!script type="text/javascript" src="/js/me/love.js">
-<!script type="text/javascript" src="/js/me/texts.js">
-<!script type="text/javascript" src="/js/me/three.min.js">
 
-<!--崩溃-->
-<script type="text/javascript" src="/blog/js/me/crash_cheat.js"></script>
 
-<!script src="/blog/js/me/san.js">
-<!-- particles -->
-<!script src="js/me/particles.js">
-<!script src="js/me/app.js">
+
+
+
+<style type="text/css">
+ #particles-js {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: -2; 
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+ }
+</style>
+  
+<!-- scripts -->
+<script src="/blog/js/me/particles.min.js"></script>
+<script src="/blog/js/me/app.js"></script>
+
+
+
+
 
 <script src="/blog/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/blog/live2dw/assets/assets/hijiki.model.json"},"display":{"superSample":2,"width":150,"height":300,"position":"left","hOffset":0,"vOffset":-20},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.2},"log":false});</script></body>
 

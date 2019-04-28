@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Haoyue的博客总则]]></title>
+    <url>%2Fblog%2F2019%2F04%2F28%2FHaoyue%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%80%BB%E5%88%99%2F</url>
+    <content type="text"><![CDATA[1.随时停更，看心情，毕竟博客更多是写给自己的 2.博客写的主要是自己的一点见解，一点灵感，所以挂一漏万，细节问题自行请教度娘谷哥 3.暂时没有了，看心情吧]]></content>
+      <tags>
+        <tag>blog</tag>
+        <tag>随想</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[python制作词云]]></title>
     <url>%2Fblog%2F2019%2F04%2F27%2Fpython%E5%88%B6%E4%BD%9C%E8%AF%8D%E4%BA%91%2F</url>
     <content type="text"><![CDATA[等我什么时间有空了再完善 用python制作词云基本操作的网上都有,就写一些自己独特的见解吧 官网 1.用某张图片做基准生成词云 可以先用Ps二值化处理，简单说就是将基准部分涂成黑色，其它部分涂成白色，这样生成的词云效果才好 2.放大图片 如果图片太小，生成的词云不仅内容少，而且不清晰，这个也是用Ps，先新建一个超级大的图片，然后把图片复制过去，ctrl+T拉伸一下就行了，因为是二值图，所以没什么影响]]></content>
