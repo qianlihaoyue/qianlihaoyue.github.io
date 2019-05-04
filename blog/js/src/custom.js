@@ -1,11 +1,3 @@
-/* 轮播背景图片 */
-$(function () {
-    $.backstretch([  
-          "/blog/images/background/background1.jpg",
-          "/blog/images/background/background2.jpg",
-          "/blog/images/background/background3.jpg"
-    ], { duration: 60000, fade: 1500 });  
-});
 
 
 

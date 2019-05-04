@@ -1097,7 +1097,6 @@ pre .javascript .function {
 }
 .headband {
   height: 3px;
-  background: #222;
 }
 .site-meta {
   margin: 0;
@@ -1848,7 +1847,7 @@ pre {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #9fedad;
+  background: #fa93bf;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2702,4 +2701,14 @@ embed {
   padding: 25px;
   -webkit-box-shadow: 0 0 5px rgba(202,203,203,0.5);
   -moz-box-shadow: 0 0 5px rgba(202,203,204,0.5);
+}
+.top-scroll-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  display: none;
+  width: 0;
+  height: 2px;
+  background: radial-gradient(#f00 -24%, #ff0 100%);
 }
