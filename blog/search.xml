@@ -27,7 +27,7 @@
   </entry>
   <entry>
     <title><![CDATA[Hexo自定义live2d]]></title>
-    <url>%2Fblog%2F2019%2F04%2F27%2FHexo%E4%BF%AE%E6%94%B9live2d%2F</url>
+    <url>%2Fblog%2F2019%2F04%2F27%2FHexo%E8%87%AA%E5%AE%9A%E4%B9%89live2d%2F</url>
     <content type="text"><![CDATA[1.live2d下载 1.live2d下载及配置2.live2d模型3.配置完后记得在手机端查看一下 2.折腾一下 1.模型文件夹下moc储存着模型图片，可以压缩一下,也可以Ps美化一下 2.mtn中储存着动作文件，主要修改 00_idle.mtn 用记事本notepad++等都能打开，就是简单的几个英语单词和动作数据，比如眨眼就是1-&gt;0-&gt;1 修改这个主要是因为我博客那只猫，打起哈欠太恐怖了]]></content>
       <tags>
         <tag>Hexo</tag>
