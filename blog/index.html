@@ -334,7 +334,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://qianlihaoyue.github.io/blog/blog/2019/04/28/Haoyue的博客总则/">
+    <link itemprop="mainEntityOfPage" href="http://qianlihaoyue.github.io/blog/blog/2019/05/11/cmd的奇技淫巧/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Haoyue">
@@ -355,7 +355,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/blog/2019/04/28/Haoyue的博客总则/" itemprop="url">Haoyue的博客总则</a></h1>
+                <a class="post-title-link" href="/blog/2019/05/11/cmd的奇技淫巧/" itemprop="url">cmd的奇技淫巧</a></h1>
         
 
         <div class="post-meta">
@@ -367,8 +367,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-28T13:45:43+08:00">
-                2019-04-28
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-05-11T21:49:43+08:00">
+                2019-05-11
               </time>
             
 
@@ -406,12 +406,23 @@
 
       
         
-          
-            <p>1.随时停更，看心情，毕竟博客更多是写给自己的</p>
-<p>2.博客写的主要是自己的一点见解，一点灵感，所以挂一漏万，细节问题自行请教度娘谷哥</p>
-<p>3.暂时没有了，看心情吧</p>
+          <p>这里存放着我经常使用或者发现的cmd小技巧。</p>
+<p>排序方式：Haoyue‘s 心情</p>
+<h2>1.一键导出wifi密码</h2>
 
-          
+<blockquote>
+<p>原理：netsh wlan show profile  可以查看电脑连过的wifi</p>
+<p>​            netsh wlan show profile name=”wifi名称” key=clear  可以查看wifi password</p>
+</blockquote>
+<p>一个个查看显然是不明智的，于是我动用了几个小时封装成<code>.bat</code>,一键导出wifi密码。</p>
+<p><strong>源代码：</strong></p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/blog/2019/05/11/cmd的奇技淫巧/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -530,23 +541,142 @@
 
       
         
-          
-            <p>转载<a href="https://www.zhihu.com/question/29962541/answer/680078799" target="_blank" rel="noopener">我的知乎回答</a> (滑稽)</p>
+          <p>转载<a href="https://www.zhihu.com/question/29962541/answer/680078799" target="_blank" rel="noopener">我的知乎回答</a> (滑稽)</p>
 <h2>图片转字符</h2>
 
 <p>首选语言当然是python了，这里我直接搬砖了，Crossin的<a href="https://github.com/crossin/snippet/tree/master/img2chr" target="_blank" rel="noopener">img2chr</a>,里面有一个 img2chr.py 可以实现图片转字符。当然你也可以在网上找找，应该挺多的。其次就是matlab，也挺多的。</p>
 <h2> 艺术字</h2>
 
 <p>比如知乎的</p>
-<p><img src="https://raw.githubusercontent.com/qianlihaoyue/img/master/hexo/zhihu.jpg" alt></p>
-<p>实际上在github上有开源项目<a href="https://github.com/yhangf/text2art" target="_blank" rel="noopener">text2art</a> , 还有在线体验的<a href="http://www.patorjk.com/software/taag/#p=display&f=Alpha&t=HaoYue" target="_blank" rel="noopener">patorjk</a></p>
-<p><img src="https://raw.githubusercontent.com/qianlihaoyue/img/master/hexo/20190511202815.png" alt></p>
-<h3>text2art</h3>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/blog/2019/05/11/字符/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
 
-<p>基本使用方法在github上都有，不过我也是稍微会点批处理的，<img src="https://raw.githubusercontent.com/qianlihaoyue/img/master/hexo/emoji.jpg" alt>总不会一个一个导出的</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@echo off</span><br><span class="line">:begin</span><br><span class="line">::在控制台无限输出随机艺术字效果</span><br><span class="line">text2art rd HaoYue</span><br><span class="line">::导出到文件</span><br><span class="line">::text2art rd HaoYue &gt;&gt; text.txt</span><br><span class="line">goto begin</span><br></pre></td></tr></table></figure>
-<p>保存成<code>.bat</code>文件，运行即可，然后选一个喜欢的就行了，效果如下</p>
-<p><img src="https://raw.githubusercontent.com/qianlihaoyue/img/master/hexo/text2.gif" alt></p>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://qianlihaoyue.github.io/blog/blog/2019/04/28/Haoyue的博客总则/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Haoyue">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/blog/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Haoyue">
+    </span>
+	
+
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/blog/2019/04/28/Haoyue的博客总则/" itemprop="url">Haoyue的博客总则</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-28T13:45:43+08:00">
+                2019-04-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>1.随时停更，看心情，毕竟博客更多是写给自己的</p>
+<p>2.博客写的主要是自己的一点见解，一点灵感，所以挂一漏万，细节问题自行请教度娘谷哥</p>
+<p>3.暂时没有了，看心情吧</p>
 
           
         
@@ -797,7 +927,6 @@
       
         
           <p>这是我的第一篇博客，突然发现好费时间，所以文章细节自行百度，谷歌也行</p>
-<p>[TOC]</p>
 <h1 id="1-为什么要用powershell"><a href="#1-为什么要用powershell" class="headerlink" title="1.为什么要用powershell"></a>1.为什么要用powershell</h1><p>一句话就是，powershell是cmd的超集。</p>
 <p>详情自行百度</p>
 <p>缺点：对于电脑配置不太好的电脑，打开可能会慢一点，特别是多开几个插件</p>
@@ -1173,7 +1302,7 @@
               
                 <a href="/blog/archives/">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1205,7 +1334,7 @@
 	<h3 class="widget-title">Tag Cloud</h3>
 	<div id="myCanvasContainer" class="widget tagcloud">
 		<canvas width="250" height="250" id="resCanvas" style="width=100%">
-			<ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hexo/">Hexo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/blog/">blog</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/python/">python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/windows/">windows</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/随想/">随想</a><span class="tag-list-count">1</span></li></ul>
+			<ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hexo/">Hexo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/blog/">blog</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/python/">python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/windows/">windows</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/随想/">随想</a><span class="tag-list-count">1</span></li></ul>
 		</canvas>
 	</div>
 </div>
@@ -1810,39 +1939,7 @@
 
 
 
-<!--click-->
-<script type="text/javascript">
-var a_idx = 0;
-jQuery(document).ready(function($) {
-    $("body").click(
-	function(e) 
-	{
-        var a = new Array("c","c++","python","STC51","STM32","AD","Pi");
-        var $i = $("<span></span>").text(a[a_idx]);
-        a_idx = (a_idx + 1) % a.length;
-        var x = e.pageX,
-        y = e.pageY;
-        $i.css({
-            "z-index": 999999999999999999999999999999999999999999999999999999999999999999999,
-            "top": y - 20,
-            "left": x,
-            "position": "absolute",
-            "font-weight": "bold",
-            "color": "rgb("+~~(255*Math.random())+","+~~(255*Math.random())+","+~~(255*Math.random())+")"
-        });
-        $("body").append($i);
-        $i.animate({
-            "top": y - 180,
-            "opacity": 0
-        },
-        1500,
-        function() 
-		{
-            $i.remove();
-        });
-    });
-});
-</script>
+
 
 <!--input--> 
 <script type="text/javascript" src="/blog/js/me/activate-power-mode.js"></script>
@@ -1880,7 +1977,40 @@ document.body.addEventListener('input', POWERMODE); // 为所有 input 标签都
 
 
 
-
+<!--click-->
+<script type="text/javascript">
+var a_idx = 0;
+jQuery(document).ready(function($) {
+    $("body").click(
+	function(e) 
+	{
+        //var a = new Array("c","c++","python","STC51","STM32","AD","Pi");
+		var a = new Array("科协","nb","!");
+        var $i = $("<span></span>").text(a[a_idx]);
+        a_idx = (a_idx + 1) % a.length;
+        var x = e.pageX,
+        y = e.pageY;
+        $i.css({
+            "z-index": 999999999999999999999999999999999999999999999999999999999999999999999,
+            "top": y - 20,
+            "left": x,
+            "position": "absolute",
+            "font-weight": "bold",
+            "color": "rgb("+~~(255*Math.random())+","+~~(255*Math.random())+","+~~(255*Math.random())+")"
+        });
+        $("body").append($i);
+        $i.animate({
+            "top": y - 180,
+            "opacity": 0
+        },
+        1500,
+        function() 
+		{
+            $i.remove();
+        });
+    });
+});
+</script>
 
 <script src="/blog/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/blog/live2dw/assets/assets/hijiki.model.json"},"display":{"superSample":2,"width":150,"height":300,"position":"left","hOffset":0,"vOffset":-20},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.2},"log":false});</script></body>
 

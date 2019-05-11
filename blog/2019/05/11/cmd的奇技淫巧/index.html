@@ -98,18 +98,20 @@
 
 
 
-<meta name="description" content="这是我的第一篇博客，突然发现好费时间，所以文章细节自行百度，谷歌也行 1.为什么要用powershell一句话就是，powershell是cmd的超集。 详情自行百度 缺点：对于电脑配置不太好的电脑，打开可能会慢一点，特别是多开几个插件 2.打开方式1.win+R  (windows旧版本可以在‘开始’中找到运行),或者任务管理器-&amp;gt;文件-&amp;gt;运行新任务 输入  powershell">
+<meta name="description" content="这里存放着我经常使用或者发现的cmd小技巧。 排序方式：Haoyue‘s 心情 1.一键导出wifi密码   原理：netsh wlan show profile  可以查看电脑连过的wifi ​            netsh wlan show profile name=”wifi名称” key=clear  可以查看wifi password  一个个查看显然是不明智的，于是我动用了几个小">
 <meta name="keywords" content="windows">
 <meta property="og:type" content="article">
-<meta property="og:title" content="powershell配置">
-<meta property="og:url" content="http://qianlihaoyue.github.io/blog/2019/04/27/powershell配置/index.html">
+<meta property="og:title" content="cmd的奇技淫巧">
+<meta property="og:url" content="http://qianlihaoyue.github.io/blog/2019/05/11/cmd的奇技淫巧/index.html">
 <meta property="og:site_name" content="Haoyue">
-<meta property="og:description" content="这是我的第一篇博客，突然发现好费时间，所以文章细节自行百度，谷歌也行 1.为什么要用powershell一句话就是，powershell是cmd的超集。 详情自行百度 缺点：对于电脑配置不太好的电脑，打开可能会慢一点，特别是多开几个插件 2.打开方式1.win+R  (windows旧版本可以在‘开始’中找到运行),或者任务管理器-&amp;gt;文件-&amp;gt;运行新任务 输入  powershell">
+<meta property="og:description" content="这里存放着我经常使用或者发现的cmd小技巧。 排序方式：Haoyue‘s 心情 1.一键导出wifi密码   原理：netsh wlan show profile  可以查看电脑连过的wifi ​            netsh wlan show profile name=”wifi名称” key=clear  可以查看wifi password  一个个查看显然是不明智的，于是我动用了几个小">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-05-11T13:50:28.156Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/qianlihaoyue/img/master/hexo/emoji.jpg">
+<meta property="og:updated_time" content="2019-05-11T15:04:33.367Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="powershell配置">
-<meta name="twitter:description" content="这是我的第一篇博客，突然发现好费时间，所以文章细节自行百度，谷歌也行 1.为什么要用powershell一句话就是，powershell是cmd的超集。 详情自行百度 缺点：对于电脑配置不太好的电脑，打开可能会慢一点，特别是多开几个插件 2.打开方式1.win+R  (windows旧版本可以在‘开始’中找到运行),或者任务管理器-&amp;gt;文件-&amp;gt;运行新任务 输入  powershell">
+<meta name="twitter:title" content="cmd的奇技淫巧">
+<meta name="twitter:description" content="这里存放着我经常使用或者发现的cmd小技巧。 排序方式：Haoyue‘s 心情 1.一键导出wifi密码   原理：netsh wlan show profile  可以查看电脑连过的wifi ​            netsh wlan show profile name=”wifi名称” key=clear  可以查看wifi password  一个个查看显然是不明智的，于是我动用了几个小">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/qianlihaoyue/img/master/hexo/emoji.jpg">
 
 
 
@@ -139,13 +141,13 @@
 
 
 
-  <link rel="canonical" href="http://qianlihaoyue.github.io/blog/2019/04/27/powershell配置/">
+  <link rel="canonical" href="http://qianlihaoyue.github.io/blog/2019/05/11/cmd的奇技淫巧/">
 
 
 
 
 
-  <title>powershell配置 | Haoyue</title>
+  <title>cmd的奇技淫巧 | Haoyue</title>
   
 
 
@@ -338,7 +340,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://qianlihaoyue.github.io/blog/blog/2019/04/27/powershell配置/">
+    <link itemprop="mainEntityOfPage" href="http://qianlihaoyue.github.io/blog/blog/2019/05/11/cmd的奇技淫巧/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Haoyue">
@@ -357,7 +359,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">powershell配置</h1>
+          <h1 class="post-title" itemprop="name headline">cmd的奇技淫巧</h1>
         
 
         <div class="post-meta">
@@ -369,8 +371,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-27T18:40:20+08:00">
-                2019-04-27
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-05-11T21:49:43+08:00">
+                2019-05-11
               </time>
             
 
@@ -412,42 +414,57 @@
       
 
       
-        <p>这是我的第一篇博客，突然发现好费时间，所以文章细节自行百度，谷歌也行</p>
-<h1 id="1-为什么要用powershell"><a href="#1-为什么要用powershell" class="headerlink" title="1.为什么要用powershell"></a>1.为什么要用powershell</h1><p>一句话就是，powershell是cmd的超集。</p>
-<p>详情自行百度</p>
-<p>缺点：对于电脑配置不太好的电脑，打开可能会慢一点，特别是多开几个插件</p>
-<h1 id="2-打开方式"><a href="#2-打开方式" class="headerlink" title="2.打开方式"></a>2.打开方式</h1><p>1.win+R  (windows旧版本可以在‘开始’中找到运行),或者任务管理器-&gt;文件-&gt;运行新任务</p>
-<p>输入  powershell </p>
+        <p>这里存放着我经常使用或者发现的cmd小技巧。</p>
+<p>排序方式：Haoyue‘s 心情</p>
+<h2>1.一键导出wifi密码</h2>
+
+<blockquote>
+<p>原理：netsh wlan show profile  可以查看电脑连过的wifi</p>
+<p>​            netsh wlan show profile name=”wifi名称” key=clear  可以查看wifi password</p>
+</blockquote>
+<p>一个个查看显然是不明智的，于是我动用了几个小时封装成<code>.bat</code>,一键导出wifi密码。</p>
+<p><strong>源代码：</strong></p>
 <a id="more"></a>
-<p>2.在文件目录  shift+右键 可以在此目录启动powershell</p>
-<p>3.如果觉得按shift太麻烦，可以修改注册表</p>
-<p>[HKEY_CLASSES_ROOT\Directory\Background\shell]</p>
-<p>此处是鼠标右键面板，为了防止意外，可以先对shell备份，（对着shell右键导出），然后新建一个项，和原来的Powershell不同就行，然后再新建的项中新建项 command，然后修改command数值数据 </p>
-<p><code>powershell.exe -noexit -command Set-Location -literalPath &#39;%V&#39;</code></p>
-<p>其实就是将原来的powershell值复制了一下<br>可以再添加icon，这里就不写了</p>
-<h1>3.常用技巧</h1>
+<p><strong>你想多了</strong>，我怎么可能传播这种东西呢（滑稽）</p>
+<p>其实技术上也挺简单的，先导出连过的wifi名称，组合字符串，执行cmd，最后提取字符串就行了。</p>
+<p>当然做为最淫的技巧，肯定不能只在自己电脑上用了,封装exe，放在U盘里，对于win10以下的电脑还可以做个自启动，这样岂不是<img src="https://raw.githubusercontent.com/qianlihaoyue/img/master/hexo/emoji.jpg" alt></p>
+<p>后期考虑用python重置一个，一键导入xls，也省的密码重复了,还能搞二次开发，何乐而不为呢，就是不知道速度快不，emmmmm。。。</p>
+<h2>2.del</h2>
 
-<h2>1.运行/调用应用</h2>
+<h4>1.放在U盘里，删除插入手机产生的临时文件夹</h4>
 
-<p>1.start “路径”  可以打开文件，打开文件夹，运行exe bat，打开网址等。。。<br>（如果路径中有空格必须加引号）</p>
-<p>2.直接输入某些应用就可打开，（前提是已经安装并且在系统变量path中），比如 python vim gcc</p>
-<p>3.还有一些windows自带的 比如 taskmgr 任务管理器 control 控制面板，slidetoshutdown 滑动关机（win10专属好像，至少xp没），regedit 注册表等。。。自行百度</p>
-<h2>2.dos常用命令</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">rd  Sounds  /s/q</span><br><span class="line">rd Android /s/q</span><br><span class="line">rd LOST.DIR /s/q</span><br><span class="line">del BOOTEX.LOG /s/q</span><br></pre></td></tr></table></figure>
+<h4>2.做项目时删除软件产生的临时文件</h4>
+
+<p>常见于 keil 的工程，我加强了一下，一键删除当前目录及子目录下*.后缀文件,比如删除所有obj文件</p>
+<p><code>for /R %cd% %%f in ( *.OBJ) do ( del %%f)</code></p>
+<h4>3.也可以删除 广告网页链接快捷方式 等，任君发挥</h4>
+
+
+
+<p>PS:基本使用技巧</p>
+<p>del *.txt 删除该目录下所有txt文件</p>
+<p>rd 删除文件夹</p>
+<h2>3.copy</h2>
+
+<h4>1.copy电脑文件 至 U盘/硬盘，一键备份</h4>
+
+<p><code>xcopy  D:\c语言\学习\作品 &quot;E:\backup\c 语言作品&quot; /s/e/y</code></p>
+<p>/s/e/y后缀什么意思可以自行搜一下</p>
+<h4>2.提取分离文件</h4>
+
+<p>比如在一堆文件夹中提取某类型文件，可以先遍历复制到某文件夹，再删除源文件就行了。</p>
+<p><code>for /R %cd% %%f in ( *.OBJ) do (xcopy  %%f &quot;E:\backup\c 语言作品&quot; /s/e/y)</code></p>
+<p>PS：批处理没有剪切功能，所以尽量复制一些小文件</p>
+  <h2>4,不定时更新</h2>
+
 
 
 <blockquote>
+<p>定时关机，睡眠</p>
+<p>隐藏文件 </p>
+<p>产生死循环执行某些命令。</p>
 </blockquote>
-<h1 id="4-美化及折腾"><a href="#4-美化及折腾" class="headerlink" title="4.美化及折腾"></a>4.美化及折腾</h1><h2>1.插件</h2>
-
-<p>可以搜搜powershell有哪些插件，我就用了两个，一个是<a href="https://archive.codeplex.com/?p=powertab" target="_blank" rel="noopener">PowerTab</a>补全，自带的Tab补全一次只能显示一个</p>
-<p>第二个是<a href="https://github.com/JanDeDobbeleer/oh-my-posh" target="_blank" rel="noopener">oh-my-posh</a>主题美化 </p>
-<h2>2.字体</h2>
-
-<p><a href="https://www.zhihu.com/question/36344262" target="_blank" rel="noopener"> 为什么 Windows 下 cmd 和 PowerShell 不能方便地自定义字体？-知乎</a></p>
-<h2>3.当然有最简单的美化</h2>
-
-
-<p>直接在powershell标题上右键-&gt;属性，改改字体，大小，颜色还是可以的</p>
 
       
     </div>
@@ -478,8 +495,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2019/04/27/Hexo自定义live2d/" rel="next" title="Hexo自定义live2d">
-                <i class="fa fa-chevron-left"></i> Hexo自定义live2d
+              <a href="/blog/2019/05/11/字符/" rel="next" title="字符">
+                <i class="fa fa-chevron-left"></i> 字符
               </a>
             
           </div>
@@ -487,10 +504,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/blog/2019/04/27/python制作词云/" rel="prev" title="python制作词云">
-                python制作词云 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -637,7 +650,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-为什么要用powershell"><span class="nav-text">1.为什么要用powershell</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-打开方式"><span class="nav-text">2.打开方式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-text">3.常用技巧</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-text">1.运行/调用应用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-text">2.dos常用命令</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-美化及折腾"><span class="nav-text">4.美化及折腾</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-text">1.插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-text">2.字体</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-text">3.当然有最简单的美化</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-text">1.一键导出wifi密码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-text">2.del</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-text">1.放在U盘里，删除插入手机产生的临时文件夹</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-text">2.做项目时删除软件产生的临时文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-text">3.也可以删除 广告网页链接快捷方式 等，任君发挥</span></a></li></ol></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-text">3.copy</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-text">1.copy电脑文件 至 U盘/硬盘，一键备份</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-text">2.提取分离文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-text">4,不定时更新</span></a></li></div>
             
 
           </div>

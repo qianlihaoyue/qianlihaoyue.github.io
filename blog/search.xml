@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[cmd的奇技淫巧]]></title>
+    <url>%2Fblog%2F2019%2F05%2F11%2Fcmd%E7%9A%84%E5%A5%87%E6%8A%80%E6%B7%AB%E5%B7%A7%2F</url>
+    <content type="text"><![CDATA[这里存放着我经常使用或者发现的cmd小技巧。 排序方式：Haoyue‘s 心情 1.一键导出wifi密码 原理：netsh wlan show profile 可以查看电脑连过的wifi ​ netsh wlan show profile name=”wifi名称” key=clear 可以查看wifi password 一个个查看显然是不明智的，于是我动用了几个小时封装成.bat,一键导出wifi密码。 源代码： 你想多了，我怎么可能传播这种东西呢（滑稽） 其实技术上也挺简单的，先导出连过的wifi名称，组合字符串，执行cmd，最后提取字符串就行了。 当然做为最淫的技巧，肯定不能只在自己电脑上用了,封装exe，放在U盘里，对于win10以下的电脑还可以做个自启动，这样岂不是 后期考虑用python重置一个，一键导入xls，也省的密码重复了,还能搞二次开发，何乐而不为呢，就是不知道速度快不，emmmmm。。。 2.del 1.放在U盘里，删除插入手机产生的临时文件夹 1234rd Sounds /s/qrd Android /s/qrd LOST.DIR /s/qdel BOOTEX.LOG /s/q 2.做项目时删除软件产生的临时文件 常见于 keil 的工程，我加强了一下，一键删除当前目录及子目录下*.后缀文件,比如删除所有obj文件 for /R %cd% %%f in ( *.OBJ) do ( del %%f) 3.也可以删除 广告网页链接快捷方式 等，任君发挥 PS:基本使用技巧 del *.txt 删除该目录下所有txt文件 rd 删除文件夹 3.copy 1.copy电脑文件 至 U盘/硬盘，一键备份 xcopy D:\c语言\学习\作品 &quot;E:\backup\c 语言作品&quot; /s/e/y /s/e/y后缀什么意思可以自行搜一下 2.提取分离文件 比如在一堆文件夹中提取某类型文件，可以先遍历复制到某文件夹，再删除源文件就行了。 for /R %cd% %%f in ( *.OBJ) do (xcopy %%f &quot;E:\backup\c 语言作品&quot; /s/e/y) PS：批处理没有剪切功能，所以尽量复制一些小文件 4,不定时更新 定时关机，睡眠 隐藏文件 产生死循环执行某些命令。]]></content>
+      <tags>
+        <tag>windows</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[字符]]></title>
     <url>%2Fblog%2F2019%2F05%2F11%2F%E5%AD%97%E7%AC%A6%2F</url>
     <content type="text"><![CDATA[转载我的知乎回答 (滑稽) 图片转字符 首选语言当然是python了，这里我直接搬砖了，Crossin的img2chr,里面有一个 img2chr.py 可以实现图片转字符。当然你也可以在网上找找，应该挺多的。其次就是matlab，也挺多的。 艺术字 比如知乎的 实际上在github上有开源项目text2art , 还有在线体验的patorjk text2art 基本使用方法在github上都有，不过我也是稍微会点批处理的，总不会一个一个导出的 1234567@echo off:begin::在控制台无限输出随机艺术字效果text2art rd HaoYue::导出到文件::text2art rd HaoYue &gt;&gt; text.txtgoto begin 保存成.bat文件，运行即可，然后选一个喜欢的就行了，效果如下]]></content>
@@ -25,7 +33,7 @@
   <entry>
     <title><![CDATA[powershell配置]]></title>
     <url>%2Fblog%2F2019%2F04%2F27%2Fpowershell%E9%85%8D%E7%BD%AE%2F</url>
-    <content type="text"><![CDATA[这是我的第一篇博客，突然发现好费时间，所以文章细节自行百度，谷歌也行 [TOC] 1.为什么要用powershell一句话就是，powershell是cmd的超集。 详情自行百度 缺点：对于电脑配置不太好的电脑，打开可能会慢一点，特别是多开几个插件 2.打开方式1.win+R (windows旧版本可以在‘开始’中找到运行),或者任务管理器-&gt;文件-&gt;运行新任务 输入 powershell 2.在文件目录 shift+右键 可以在此目录启动powershell 3.如果觉得按shift太麻烦，可以修改注册表 [HKEY_CLASSES_ROOT\Directory\Background\shell] 此处是鼠标右键面板，为了防止意外，可以先对shell备份，（对着shell右键导出），然后新建一个项，和原来的Powershell不同就行，然后再新建的项中新建项 command，然后修改command数值数据 powershell.exe -noexit -command Set-Location -literalPath &#39;%V&#39; 其实就是将原来的powershell值复制了一下可以再添加icon，这里就不写了 3.常用技巧 1.运行/调用应用 1.start “路径” 可以打开文件，打开文件夹，运行exe bat，打开网址等。。。（如果路径中有空格必须加引号） 2.直接输入某些应用就可打开，（前提是已经安装并且在系统变量path中），比如 python vim gcc 3.还有一些windows自带的 比如 taskmgr 任务管理器 control 控制面板，slidetoshutdown 滑动关机（win10专属好像，至少xp没），regedit 注册表等。。。自行百度 2.dos常用命令 介绍几个优于图形化界面的命令 1.del *.txt *是通配符，可以删除该目录下所有txt文件 2.cd “path” 转到某目录这里cmd和powershell有些不同，cmd切换盘符，只键入d: 就行了,不用 cd d:，powershell随意 3.dir 后面可加路径，不加默认就是当前目录 ，显示目录的文件及文件夹，不过没gvim的tree炫 4.netsh wlan show profile 可以查看电脑连过的wifinetsh wlan show profile name=&quot;wifi名称&quot; key=clear 可以查看wifi password肯定会有丧心病狂的人把它封装成exe或者bat，一键导出所有wifi密码，放在U盘里,比如我，就是还没找到U盘自启动的办法。。。 5.懒得写了。。。 3.介绍一些cmd的小技巧吧 1.定时关机，睡眠2.隐藏文件3.copy文件 放在U盘，或者硬盘里，一键备份4.删除文件放在U盘里，删除插入手机产生的临时文件夹或者做项目时删除软件产生的临时文件或者删除下载文件中的 广告网页链接快捷方式自由发挥。。。5.产生死循环执行某些命令。。。 4.美化及折腾1.插件 可以搜搜powershell有哪些插件，我就用了两个，一个是PowerTab补全，自带的Tab补全一次只能显示一个 第二个是oh-my-posh主题美化 2.字体 为什么 Windows 下 cmd 和 PowerShell 不能方便地自定义字体？-知乎 3.当然有最简单的美化 直接在powershell标题上右键-&gt;属性，改改字体，大小，颜色还是可以的]]></content>
+    <content type="text"><![CDATA[这是我的第一篇博客，突然发现好费时间，所以文章细节自行百度，谷歌也行 1.为什么要用powershell一句话就是，powershell是cmd的超集。 详情自行百度 缺点：对于电脑配置不太好的电脑，打开可能会慢一点，特别是多开几个插件 2.打开方式1.win+R (windows旧版本可以在‘开始’中找到运行),或者任务管理器-&gt;文件-&gt;运行新任务 输入 powershell 2.在文件目录 shift+右键 可以在此目录启动powershell 3.如果觉得按shift太麻烦，可以修改注册表 [HKEY_CLASSES_ROOT\Directory\Background\shell] 此处是鼠标右键面板，为了防止意外，可以先对shell备份，（对着shell右键导出），然后新建一个项，和原来的Powershell不同就行，然后再新建的项中新建项 command，然后修改command数值数据 powershell.exe -noexit -command Set-Location -literalPath &#39;%V&#39; 其实就是将原来的powershell值复制了一下可以再添加icon，这里就不写了 3.常用技巧 1.运行/调用应用 1.start “路径” 可以打开文件，打开文件夹，运行exe bat，打开网址等。。。（如果路径中有空格必须加引号） 2.直接输入某些应用就可打开，（前提是已经安装并且在系统变量path中），比如 python vim gcc 3.还有一些windows自带的 比如 taskmgr 任务管理器 control 控制面板，slidetoshutdown 滑动关机（win10专属好像，至少xp没），regedit 注册表等。。。自行百度 2.dos常用命令 4.美化及折腾1.插件 可以搜搜powershell有哪些插件，我就用了两个，一个是PowerTab补全，自带的Tab补全一次只能显示一个 第二个是oh-my-posh主题美化 2.字体 为什么 Windows 下 cmd 和 PowerShell 不能方便地自定义字体？-知乎 3.当然有最简单的美化 直接在powershell标题上右键-&gt;属性，改改字体，大小，颜色还是可以的]]></content>
       <tags>
         <tag>windows</tag>
       </tags>
