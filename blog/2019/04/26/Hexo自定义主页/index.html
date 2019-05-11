@@ -98,18 +98,18 @@
 
 
 
-<meta name="description" content="My blog1.更改博客生成目录转载jsdoi的文章，这里只简单介绍第一步的操作步骤，没有详情1.hexo clean + 手动清除2.修改站点配置_config.ymlroot: /blogpublic_dir: public/blog将博客文件生成到public的子目录blog下3.在 node_modules/hexo-deployer-git/lib/deployer.js// var">
+<meta name="description" content="My blog 1.更改博客生成目录转载jsdoi的文章，这里只简单介绍第一步的操作步骤，没有详情  1.hexo clean + 手动清除   2.修改站点配置_config.yml  root: /blogpublic_dir: public/blog 将博客文件生成到public的子目录blog下 3.在 node_modules/hexo-deployer-git/lib/deployer">
 <meta name="keywords" content="Hexo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo自定义主页">
 <meta property="og:url" content="http://qianlihaoyue.github.io/blog/2019/04/26/Hexo自定义主页/index.html">
 <meta property="og:site_name" content="Haoyue">
-<meta property="og:description" content="My blog1.更改博客生成目录转载jsdoi的文章，这里只简单介绍第一步的操作步骤，没有详情1.hexo clean + 手动清除2.修改站点配置_config.ymlroot: /blogpublic_dir: public/blog将博客文件生成到public的子目录blog下3.在 node_modules/hexo-deployer-git/lib/deployer.js// var">
+<meta property="og:description" content="My blog 1.更改博客生成目录转载jsdoi的文章，这里只简单介绍第一步的操作步骤，没有详情  1.hexo clean + 手动清除   2.修改站点配置_config.yml  root: /blogpublic_dir: public/blog 将博客文件生成到public的子目录blog下 3.在 node_modules/hexo-deployer-git/lib/deployer">
 <meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2019-04-27T14:50:43.943Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo自定义主页">
-<meta name="twitter:description" content="My blog1.更改博客生成目录转载jsdoi的文章，这里只简单介绍第一步的操作步骤，没有详情1.hexo clean + 手动清除2.修改站点配置_config.ymlroot: /blogpublic_dir: public/blog将博客文件生成到public的子目录blog下3.在 node_modules/hexo-deployer-git/lib/deployer.js// var">
+<meta name="twitter:description" content="My blog 1.更改博客生成目录转载jsdoi的文章，这里只简单介绍第一步的操作步骤，没有详情  1.hexo clean + 手动清除   2.修改站点配置_config.yml  root: /blogpublic_dir: public/blog 将博客文件生成到public的子目录blog下 3.在 node_modules/hexo-deployer-git/lib/deployer">
 
 
 
@@ -412,7 +412,28 @@
       
 
       
-        <!-- build time:Sat May 04 2019 14:57:06 GMT+0800 (GMT+08:00) --><p><a href="https://qianlihaoyue.github.io">My blog</a></p><p></p><h1>1.更改博客生成目录</h1><br><a href="https://jsdoi.com/blog/2016/02/24/blog-hexo-github/" target="_blank" rel="noopener">转载jsdoi的文章</a>，这里只简单介绍第一步的操作步骤，没有详情<p></p><blockquote><p>1.hexo clean + 手动清除</p></blockquote><blockquote><p>2.修改站点配置_config.yml</p></blockquote><p><code>root: /blog</code><br><code>public_dir: public/blog</code></p><p>将博客文件生成到public的子目录blog下</p><p>3.在 <code>node_modules/hexo-deployer-git/lib/deployer.js</code></p><p><code>// var publicDir = this.public_dir;</code><br><code>var publicDir = pathFn.join(baseDir, &#39;public&#39;);</code><br><a id="more"></a><br>4.修复翻页问题<br>在<code>node_modules/hexo/lib/plugins/helper/url_for.js</code></p><p>这里好像不太对<br><code>// path = path || &#39;/&#39;;</code><br><code>path = path || &#39;&#39;;</code></p><p>5.现在自定义文件都在public文件夹里，自动生成的博客文件都在public/blog里</p><h2>2.这里是我的一些改动</h2><p>1.如果之前已经添加过头像或者自定义js，你会发现都不能用了，修改一下路径就行了，在路径前面加上 /blog<br>检查方法也很简单，在浏览器上右键检查，或者按F12，刷新一下，在Network/网络界面上</p><p>2.自定义你的界面，直接放在public里就行了，命名为index.html，使用的资源可以放在 主题/source中</p><p>3.<code>&lt;meta http-equiv=&quot;refresh&quot; content=&quot;12&quot;;url=blog/index.html&quot;&gt;</code><br>这行代码可以定时跳转到文章主页 content=”时间”<br>当然也可以添加一个按钮跳转</p><p>4.<code>&lt;link rel=&quot;prefetch&quot; href=&quot;blog/index.html&quot;&gt;</code></p><p>据说这行代码可以实现预加载，就是在别人欣赏你的自定义主页时，加载文章，优化速度，我又不是搞前端什么的，不求甚解就行了</p><!-- rebuild by neat -->
+        <p><a href="https://qianlihaoyue.github.io">My blog</a></p>
+<p></p><h1>1.更改博客生成目录</h1><br><a href="https://jsdoi.com/blog/2016/02/24/blog-hexo-github/" target="_blank" rel="noopener">转载jsdoi的文章</a>，这里只简单介绍第一步的操作步骤，没有详情<p></p>
+<blockquote>
+<p>1.hexo clean + 手动清除</p>
+</blockquote>
+<blockquote>
+<p>2.修改站点配置_config.yml</p>
+</blockquote>
+<p><code>root: /blog</code><br><code>public_dir: public/blog</code></p>
+<p>将博客文件生成到public的子目录blog下</p>
+<p>3.在 <code>node_modules/hexo-deployer-git/lib/deployer.js</code></p>
+<p><code>// var publicDir = this.public_dir;</code><br><code>var publicDir = pathFn.join(baseDir, &#39;public&#39;);</code><br><a id="more"></a><br>4.修复翻页问题<br>在<code>node_modules/hexo/lib/plugins/helper/url_for.js</code></p>
+<p>这里好像不太对<br><code>// path = path || &#39;/&#39;;</code><br><code>path = path || &#39;&#39;;</code></p>
+<p>5.现在自定义文件都在public文件夹里，自动生成的博客文件都在public/blog里</p>
+<h2>2.这里是我的一些改动</h2>
+
+<p>1.如果之前已经添加过头像或者自定义js，你会发现都不能用了，修改一下路径就行了，在路径前面加上 /blog<br>检查方法也很简单，在浏览器上右键检查，或者按F12，刷新一下，在Network/网络界面上</p>
+<p>2.自定义你的界面，直接放在public里就行了，命名为index.html，使用的资源可以放在 主题/source中</p>
+<p>3.<code>&lt;meta http-equiv=&quot;refresh&quot; content=&quot;12&quot;;url=blog/index.html&quot;&gt;</code><br>这行代码可以定时跳转到文章主页   content=”时间”<br>当然也可以添加一个按钮跳转</p>
+<p>4.<code>&lt;link rel=&quot;prefetch&quot; href=&quot;blog/index.html&quot;&gt;</code></p>
+<p>据说这行代码可以实现预加载，就是在别人欣赏你的自定义主页时，加载文章，优化速度，我又不是搞前端什么的，不求甚解就行了</p>
+
       
     </div>
     
@@ -531,7 +552,7 @@
               
                 <a href="/blog/archives/">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1195,7 +1216,7 @@ jQuery(document).ready(function($) {
     $("body").click(
 	function(e) 
 	{
-        var a = new Array("c","c++","python","Java","PHP","Go","R","Js");
+        var a = new Array("c","c++","python","STC51","STM32","AD","Pi");
         var $i = $("<span></span>").text(a[a_idx]);
         a_idx = (a_idx + 1) % a.length;
         var x = e.pageX,

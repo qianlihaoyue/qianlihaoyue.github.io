@@ -98,18 +98,18 @@
 
 
 
-<meta name="description" content="这是我的第一篇博客，突然发现好费时间，所以文章细节自行百度，谷歌也行[TOC]1.为什么要用powershell一句话就是，powershell是cmd的超集。详情自行百度缺点：对于电脑配置不太好的电脑，打开可能会慢一点，特别是多开几个插件2.打开方式1.win+R (windows旧版本可以在‘开始’中找到运行),或者任务管理器-&amp;gt;文件-&amp;gt;运行新任务输入 powershell">
+<meta name="description" content="这是我的第一篇博客，突然发现好费时间，所以文章细节自行百度，谷歌也行 [TOC] 1.为什么要用powershell一句话就是，powershell是cmd的超集。 详情自行百度 缺点：对于电脑配置不太好的电脑，打开可能会慢一点，特别是多开几个插件 2.打开方式1.win+R  (windows旧版本可以在‘开始’中找到运行),或者任务管理器-&amp;gt;文件-&amp;gt;运行新任务 输入  powers">
 <meta name="keywords" content="windows">
 <meta property="og:type" content="article">
 <meta property="og:title" content="powershell配置">
 <meta property="og:url" content="http://qianlihaoyue.github.io/blog/2019/04/27/powershell配置/index.html">
 <meta property="og:site_name" content="Haoyue">
-<meta property="og:description" content="这是我的第一篇博客，突然发现好费时间，所以文章细节自行百度，谷歌也行[TOC]1.为什么要用powershell一句话就是，powershell是cmd的超集。详情自行百度缺点：对于电脑配置不太好的电脑，打开可能会慢一点，特别是多开几个插件2.打开方式1.win+R (windows旧版本可以在‘开始’中找到运行),或者任务管理器-&amp;gt;文件-&amp;gt;运行新任务输入 powershell">
+<meta property="og:description" content="这是我的第一篇博客，突然发现好费时间，所以文章细节自行百度，谷歌也行 [TOC] 1.为什么要用powershell一句话就是，powershell是cmd的超集。 详情自行百度 缺点：对于电脑配置不太好的电脑，打开可能会慢一点，特别是多开几个插件 2.打开方式1.win+R  (windows旧版本可以在‘开始’中找到运行),或者任务管理器-&amp;gt;文件-&amp;gt;运行新任务 输入  powers">
 <meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2019-04-27T14:19:27.365Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="powershell配置">
-<meta name="twitter:description" content="这是我的第一篇博客，突然发现好费时间，所以文章细节自行百度，谷歌也行[TOC]1.为什么要用powershell一句话就是，powershell是cmd的超集。详情自行百度缺点：对于电脑配置不太好的电脑，打开可能会慢一点，特别是多开几个插件2.打开方式1.win+R (windows旧版本可以在‘开始’中找到运行),或者任务管理器-&amp;gt;文件-&amp;gt;运行新任务输入 powershell">
+<meta name="twitter:description" content="这是我的第一篇博客，突然发现好费时间，所以文章细节自行百度，谷歌也行 [TOC] 1.为什么要用powershell一句话就是，powershell是cmd的超集。 详情自行百度 缺点：对于电脑配置不太好的电脑，打开可能会慢一点，特别是多开几个插件 2.打开方式1.win+R  (windows旧版本可以在‘开始’中找到运行),或者任务管理器-&amp;gt;文件-&amp;gt;运行新任务 输入  powers">
 
 
 
@@ -412,7 +412,54 @@
       
 
       
-        <!-- build time:Sat May 04 2019 14:57:06 GMT+0800 (GMT+08:00) --><p>这是我的第一篇博客，突然发现好费时间，所以文章细节自行百度，谷歌也行</p><p>[TOC]</p><h1 id="1-为什么要用powershell"><a href="#1-为什么要用powershell" class="headerlink" title="1.为什么要用powershell"></a>1.为什么要用powershell</h1><p>一句话就是，powershell是cmd的超集。</p><p>详情自行百度</p><p>缺点：对于电脑配置不太好的电脑，打开可能会慢一点，特别是多开几个插件</p><h1 id="2-打开方式"><a href="#2-打开方式" class="headerlink" title="2.打开方式"></a>2.打开方式</h1><p>1.win+R (windows旧版本可以在‘开始’中找到运行),或者任务管理器-&gt;文件-&gt;运行新任务</p><p>输入 powershell</p><a id="more"></a><p>2.在文件目录 shift+右键 可以在此目录启动powershell</p><p>3.如果觉得按shift太麻烦，可以修改注册表</p><p>[HKEY_CLASSES_ROOT\Directory\Background\shell]</p><p>此处是鼠标右键面板，为了防止意外，可以先对shell备份，（对着shell右键导出），然后新建一个项，和原来的Powershell不同就行，然后再新建的项中新建项 command，然后修改command数值数据</p><p><code>powershell.exe -noexit -command Set-Location -literalPath &#39;%V&#39;</code></p><p>其实就是将原来的powershell值复制了一下<br>可以再添加icon，这里就不写了</p><h1>3.常用技巧</h1><h2>1.运行/调用应用</h2><p>1.start “路径” 可以打开文件，打开文件夹，运行exe bat，打开网址等。。。<br>（如果路径中有空格必须加引号）</p><p>2.直接输入某些应用就可打开，（前提是已经安装并且在系统变量path中），比如 python vim gcc</p><p>3.还有一些windows自带的 比如 taskmgr 任务管理器 control 控制面板，slidetoshutdown 滑动关机（win10专属好像，至少xp没），regedit 注册表等。。。自行百度</p><h2>2.dos常用命令</h2><p>介绍几个优于图形化界面的命令</p><p>1.del *.txt *是通配符，可以删除该目录下所有txt文件</p><p>2.cd “path” 转到某目录<br>这里cmd和powershell有些不同，cmd切换盘符，只键入<em>d:</em> 就行了,不用 <em>cd d:</em>，powershell随意</p><p>3.dir 后面可加路径，不加默认就是当前目录 ，显示目录的文件及文件夹，不过没gvim的tree炫</p><p>4.<code>netsh wlan show profile</code> 可以查看电脑连过的wifi<br><code>netsh wlan show profile name=&quot;wifi名称&quot; key=clear</code> 可以查看wifi password<br>肯定会有丧心病狂的人把它封装成exe或者bat，一键导出所有wifi密码，放在U盘里,比如我，就是还没找到U盘自启动的办法。。。</p><p>5.懒得写了。。。</p><h2>3.介绍一些cmd的小技巧吧<br></h2><blockquote><p>1.定时关机，睡眠<br>2.隐藏文件<br>3.copy文件 放在U盘，或者硬盘里，一键备份<br>4.删除文件<br>放在U盘里，删除插入手机产生的临时文件夹<br>或者做项目时删除软件产生的临时文件<br>或者删除下载文件中的 广告网页链接快捷方式<br>自由发挥。。。<br>5.产生死循环执行某些命令。。。</p></blockquote><h1 id="4-美化及折腾"><a href="#4-美化及折腾" class="headerlink" title="4.美化及折腾"></a>4.美化及折腾</h1><h2>1.插件</h2><p>可以搜搜powershell有哪些插件，我就用了两个，一个是<a href="https://archive.codeplex.com/?p=powertab" target="_blank" rel="noopener">PowerTab</a>补全，自带的Tab补全一次只能显示一个</p><p>第二个是<a href="https://github.com/JanDeDobbeleer/oh-my-posh" target="_blank" rel="noopener">oh-my-posh</a>主题美化</p><h2>2.字体</h2><p><a href="https://www.zhihu.com/question/36344262" target="_blank" rel="noopener">为什么 Windows 下 cmd 和 PowerShell 不能方便地自定义字体？-知乎</a></p><h2>3.当然有最简单的美化</h2><p>直接在powershell标题上右键-&gt;属性，改改字体，大小，颜色还是可以的</p><!-- rebuild by neat -->
+        <p>这是我的第一篇博客，突然发现好费时间，所以文章细节自行百度，谷歌也行</p>
+<p>[TOC]</p>
+<h1 id="1-为什么要用powershell"><a href="#1-为什么要用powershell" class="headerlink" title="1.为什么要用powershell"></a>1.为什么要用powershell</h1><p>一句话就是，powershell是cmd的超集。</p>
+<p>详情自行百度</p>
+<p>缺点：对于电脑配置不太好的电脑，打开可能会慢一点，特别是多开几个插件</p>
+<h1 id="2-打开方式"><a href="#2-打开方式" class="headerlink" title="2.打开方式"></a>2.打开方式</h1><p>1.win+R  (windows旧版本可以在‘开始’中找到运行),或者任务管理器-&gt;文件-&gt;运行新任务</p>
+<p>输入  powershell </p>
+<a id="more"></a>
+<p>2.在文件目录  shift+右键 可以在此目录启动powershell</p>
+<p>3.如果觉得按shift太麻烦，可以修改注册表</p>
+<p>[HKEY_CLASSES_ROOT\Directory\Background\shell]</p>
+<p>此处是鼠标右键面板，为了防止意外，可以先对shell备份，（对着shell右键导出），然后新建一个项，和原来的Powershell不同就行，然后再新建的项中新建项 command，然后修改command数值数据 </p>
+<p><code>powershell.exe -noexit -command Set-Location -literalPath &#39;%V&#39;</code></p>
+<p>其实就是将原来的powershell值复制了一下<br>可以再添加icon，这里就不写了</p>
+<h1>3.常用技巧</h1>
+
+<h2>1.运行/调用应用</h2>
+
+<p>1.start “路径”  可以打开文件，打开文件夹，运行exe bat，打开网址等。。。<br>（如果路径中有空格必须加引号）</p>
+<p>2.直接输入某些应用就可打开，（前提是已经安装并且在系统变量path中），比如 python vim gcc</p>
+<p>3.还有一些windows自带的 比如 taskmgr 任务管理器 control 控制面板，slidetoshutdown 滑动关机（win10专属好像，至少xp没），regedit 注册表等。。。自行百度</p>
+<h2>2.dos常用命令</h2>
+
+<p>介绍几个优于图形化界面的命令</p>
+<p>1.del *.txt    *是通配符，可以删除该目录下所有txt文件   </p>
+<p>2.cd “path”     转到某目录<br>这里cmd和powershell有些不同，cmd切换盘符，只键入<em>d:</em> 就行了,不用 <em>cd d:</em>，powershell随意</p>
+<p>3.dir 后面可加路径，不加默认就是当前目录 ，显示目录的文件及文件夹，不过没gvim的tree炫</p>
+<p>4.<code>netsh wlan show profile</code> 可以查看电脑连过的wifi<br><code>netsh wlan show profile name=&quot;wifi名称&quot; key=clear</code> 可以查看wifi password<br>肯定会有丧心病狂的人把它封装成exe或者bat，一键导出所有wifi密码，放在U盘里,比如我，就是还没找到U盘自启动的办法。。。</p>
+<p>5.懒得写了。。。</p>
+<h2>3.介绍一些cmd的小技巧吧<br></h2>
+
+
+
+<blockquote>
+<p>1.定时关机，睡眠<br>2.隐藏文件<br>3.copy文件 放在U盘，或者硬盘里，一键备份<br>4.删除文件<br>放在U盘里，删除插入手机产生的临时文件夹<br>或者做项目时删除软件产生的临时文件<br>或者删除下载文件中的 广告网页链接快捷方式<br>自由发挥。。。<br>5.产生死循环执行某些命令。。。</p>
+</blockquote>
+<h1 id="4-美化及折腾"><a href="#4-美化及折腾" class="headerlink" title="4.美化及折腾"></a>4.美化及折腾</h1><h2>1.插件</h2>
+
+<p>可以搜搜powershell有哪些插件，我就用了两个，一个是<a href="https://archive.codeplex.com/?p=powertab" target="_blank" rel="noopener">PowerTab</a>补全，自带的Tab补全一次只能显示一个</p>
+<p>第二个是<a href="https://github.com/JanDeDobbeleer/oh-my-posh" target="_blank" rel="noopener">oh-my-posh</a>主题美化 </p>
+<h2>2.字体</h2>
+
+<p><a href="https://www.zhihu.com/question/36344262" target="_blank" rel="noopener"> 为什么 Windows 下 cmd 和 PowerShell 不能方便地自定义字体？-知乎</a></p>
+<h2>3.当然有最简单的美化</h2>
+
+
+<p>直接在powershell标题上右键-&gt;属性，改改字体，大小，颜色还是可以的</p>
+
       
     </div>
     
@@ -535,7 +582,7 @@
               
                 <a href="/blog/archives/">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1199,7 +1246,7 @@ jQuery(document).ready(function($) {
     $("body").click(
 	function(e) 
 	{
-        var a = new Array("c","c++","python","Java","PHP","Go","R","Js");
+        var a = new Array("c","c++","python","STC51","STM32","AD","Pi");
         var $i = $("<span></span>").text(a[a_idx]);
         a_idx = (a_idx + 1) % a.length;
         var x = e.pageX,
