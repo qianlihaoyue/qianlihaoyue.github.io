@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[STM32 PWM的配置]]></title>
+    <url>%2Fblog%2F2019%2F05%2F17%2FSTM32-PWM%E7%9A%84%E9%85%8D%E7%BD%AE%2F</url>
+    <content type="text"><![CDATA[这一周有点时间，做了个小车，用到了不少PWM，比如电机的加减速，舵机的控制，现在简单的复盘一下。 Todo 软件仿真 TIM 舵机 TIM 配置 TIM1_PWM_Init(1999,719); void TIM1_PWM_Init(u16 arr,u16 psc) 定时器初始化用到了两个参数，arr 是 自动重装值 psc 是 分频数。 先介绍分频。 分频 我们知道STM32增强型时钟频率最大达到72MHz，之所以说是最大，是因为有的时候并不需要那么高的频率，想要实现调节频率，就需要用到 定时器初始化的第二个参数 预分频psc。 比如普通的舵机工作频率一般是 50Hz到100Hz，直接用72MHz肯定驱动不了的。 为50Hz时，周期T=1/f = 20ms。 72,000,000 / 50 =1440000, 如果直接写上1440000的话，不出所料会报错， //自动重装 右击TIM_Period Go to defi… 可以看到 arr数据类型为 uint16_t 型， 所以想要产生50Hz的PWM波，就需要分频。 分频可以简单理解为降低最大频率，比如分频为2，最大频率就为 72/2=36MHz。 0.5ms————–0度； 1.0ms————45度； 1.5ms————90度； 2.0ms———–135度； 2.5ms———–180度； PWM波驱动电机 我用的驱动模块是 一块三的 双H桥， 先从最简单的说起 加减速 一个端口接GND，或者VCC，另外一个端口接PWM波，然后调节PWM波的占空比就行了，例如占空比为50%，相当于供电50%， 正反转 以前用的是两路PWM控制正反转，后来发现可以用一路PWM控制加速减速，反相。]]></content>
+      <tags>
+        <tag>STM32</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[成为有车族]]></title>
+    <url>%2Fblog%2F2019%2F05%2F17%2F%E6%88%90%E4%B8%BA%E6%9C%89%E8%BD%A6%E6%97%8F%2F</url>
+    <content type="text"><![CDATA[最近一周有时间，加之再过几周有几个比赛等着我，于是又学了学 STM32，顺手做了个小车。]]></content>
+      <tags>
+        <tag>STM32</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[cmd的奇技淫巧]]></title>
     <url>%2Fblog%2F2019%2F05%2F11%2Fcmd%E7%9A%84%E5%A5%87%E6%8A%80%E6%B7%AB%E5%B7%A7%2F</url>
     <content type="text"><![CDATA[这里存放着我经常使用或者发现的cmd小技巧。 排序方式：Haoyue‘s 心情 1.一键导出wifi密码 原理：netsh wlan show profile 可以查看电脑连过的wifi ​ netsh wlan show profile name=”wifi名称” key=clear 可以查看wifi password 一个个查看显然是不明智的，于是我动用了几个小时封装成.bat,一键导出wifi密码。 源代码： 你想多了，我怎么可能传播这种东西呢（滑稽） 其实技术上也挺简单的，先导出连过的wifi名称，组合字符串，执行cmd，最后提取字符串就行了。 当然做为最淫的技巧，肯定不能只在自己电脑上用了,封装exe，放在U盘里，对于win10以下的电脑还可以做个自启动，这样岂不是 后期考虑用python重置一个，一键导入xls，也省的密码重复了,还能搞二次开发，何乐而不为呢，就是不知道速度快不，emmmmm。。。 2.del 1.放在U盘里，删除插入手机产生的临时文件夹 1234rd Sounds /s/qrd Android /s/qrd LOST.DIR /s/qdel BOOTEX.LOG /s/q 2.做项目时删除软件产生的临时文件 常见于 keil 的工程，我加强了一下，一键删除当前目录及子目录下*.后缀文件,比如删除所有obj文件 for /R %cd% %%f in ( *.OBJ) do ( del %%f) 3.也可以删除 广告网页链接快捷方式 等，任君发挥 PS:基本使用技巧 del *.txt 删除该目录下所有txt文件 rd 删除文件夹 3.copy 1.copy电脑文件 至 U盘/硬盘，一键备份 xcopy D:\c语言\学习\作品 &quot;E:\backup\c 语言作品&quot; /s/e/y /s/e/y后缀什么意思可以自行搜一下 2.提取分离文件 比如在一堆文件夹中提取某类型文件，可以先遍历复制到某文件夹，再删除源文件就行了。 for /R %cd% %%f in ( *.OBJ) do (xcopy %%f &quot;E:\backup\c 语言作品&quot; /s/e/y) PS：批处理没有剪切功能，所以尽量复制一些小文件 4,不定时更新 定时关机，睡眠 隐藏文件 产生死循环执行某些命令。]]></content>

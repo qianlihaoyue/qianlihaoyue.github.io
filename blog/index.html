@@ -334,6 +334,288 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://qianlihaoyue.github.io/blog/blog/2019/05/17/STM32-PWM的配置/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Haoyue">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/blog/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Haoyue">
+    </span>
+	
+
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/blog/2019/05/17/STM32-PWM的配置/" itemprop="url">STM32 PWM的配置</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-05-17T13:23:36+08:00">
+                2019-05-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>这一周有点时间，做了个小车，用到了不少PWM，比如电机的加减速，舵机的控制，现在简单的复盘一下。</p>
+<h2>Todo</h2>
+
+<ul>
+<li style="list-style: none"><input type="checkbox"> 软件仿真</li>
+<li style="list-style: none"><input type="checkbox"> TIM</li>
+<li style="list-style: none"><input type="checkbox"> 舵机</li>
+<li style="list-style: none"><input type="checkbox"> </li>
+</ul>
+<h2>TIM 配置</h2>
+
+<p><code>TIM1_PWM_Init(1999,719);</code> </p>
+<p><code>void TIM1_PWM_Init(u16 arr,u16 psc)</code></p>
+<p>定时器初始化用到了两个参数，arr 是 自动重装值  psc 是 分频数。</p>
+<p>先介绍分频。</p>
+<h3>分频</h3>
+
+<p>我们知道STM32增强型时钟频率最大达到72MHz，之所以说是最大，是因为有的时候并不需要那么高的频率，想要实现调节频率，就需要用到 定时器初始化的第二个参数 预分频psc。</p>
+<p>比如普通的舵机工作频率一般是 50Hz到100Hz，直接用72MHz肯定驱动不了的。</p>
+<p>为50Hz时，周期T=1/f = 20ms。</p>
+<p>72,000,000 / 50 =1440000, 如果直接写上1440000的话，不出所料会报错， //自动重装</p>
+<p>右击<strong>TIM_Period</strong> Go to defi… 可以看到 arr数据类型为 uint16_t 型，</p>
+<p>所以想要产生50Hz的PWM波，就需要分频。</p>
+<p>分频可以简单理解为降低最大频率，比如分频为2，最大频率就为 72/2=36MHz。</p>
+<p>0.5ms————–0度；</p>
+<p>1.0ms————45度；</p>
+<p>1.5ms————90度；</p>
+<p>2.0ms———–135度；</p>
+<p>2.5ms———–180度；</p>
+<h2>PWM波驱动电机</h2>
+
+<p>我用的驱动模块是 一块三的 双H桥，</p>
+<p>先从最简单的说起</p>
+<h3>加减速</h3>
+
+<p>一个端口接GND，或者VCC，另外一个端口接PWM波，然后调节PWM波的占空比就行了，例如占空比为50%，相当于供电50%，</p>
+<h3>正反转</h3>
+
+<p>以前用的是两路PWM控制正反转，后来发现可以用一路PWM控制加速减速，反相。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://qianlihaoyue.github.io/blog/blog/2019/05/17/成为有车族/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Haoyue">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/blog/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Haoyue">
+    </span>
+	
+
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/blog/2019/05/17/成为有车族/" itemprop="url">成为有车族</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-05-17T13:21:10+08:00">
+                2019-05-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>最近一周有时间，加之再过几周有几个比赛等着我，于是又学了学 STM32，顺手做了个小车。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://qianlihaoyue.github.io/blog/blog/2019/05/11/cmd的奇技淫巧/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1302,7 +1584,7 @@
               
                 <a href="/blog/archives/">
               
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1320,7 +1602,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/blog/tags/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -1334,7 +1616,7 @@
 	<h3 class="widget-title">Tag Cloud</h3>
 	<div id="myCanvasContainer" class="widget tagcloud">
 		<canvas width="250" height="250" id="resCanvas" style="width=100%">
-			<ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hexo/">Hexo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/blog/">blog</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/python/">python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/windows/">windows</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/随想/">随想</a><span class="tag-list-count">1</span></li></ul>
+			<ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hexo/">Hexo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/STM32/">STM32</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/blog/">blog</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/python/">python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/windows/">windows</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/随想/">随想</a><span class="tag-list-count">1</span></li></ul>
 		</canvas>
 	</div>
 </div>
@@ -1382,7 +1664,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
